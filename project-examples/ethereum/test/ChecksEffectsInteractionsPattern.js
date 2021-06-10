@@ -23,7 +23,7 @@ contract('ChecksEffectsInteractionsPattern', async (accounts) => {
         assert.equal(balance_ether, 11);
     })
 
-    it('Should be safe from Reentrancy', async () => {
+    it('Should be secured from Reentrancy', async () => {
         attacker = await attacker_contract.new(victim.address);
         let one_eth = web3.utils.toWei("1", "ether");
         await web3.eth.sendTransaction({from: accounts[1], to: attacker.address, value: one_eth});
